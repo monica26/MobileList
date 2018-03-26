@@ -1,3 +1,4 @@
-<p>
-  footer works!
-</p>
+<div class="footer-buttons">
+	<button *ngIf="!first" (click)="clickButtonFooter(routerLinkPrevious)">ANTERIOR</button>
+	<button *ngIf="!end" (click)="clickButtonFooter(routerLinkNext)">SIGUIENTE</button>
+</div>
