@@ -3,24 +3,20 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { PersonalInformationComponent } from './modules/personal-information/personal-information.component';
-import { PhoneListComponent } from './modules/phone-list/phone-list.component';
-import { SummaryComponent } from './modules/summary/summary.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { DataSummaryComponent } from './shared/components/data-summary/data-summary.component';
+
+// Modulos
+import { ComponentsModule } from './shared/components/components.module';
+import { ModulesModule } from './modules/modules.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PersonalInformationComponent,
-    PhoneListComponent,
-    SummaryComponent,
-    FooterComponent,
-    DataSummaryComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ModulesModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
