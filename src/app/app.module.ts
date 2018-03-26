@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 // Modulos
 import { ComponentsModule } from './shared/components/components.module';
 import { ModulesModule } from './modules/modules.module';
+import { APP_ROUTES } from './app.routes';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ModulesModule } from './modules/modules.module';
   imports: [
     BrowserModule,
     ModulesModule,
-    ComponentsModule
+    ComponentsModule,
+    APP_ROUTES
   ],
   providers: [],
   bootstrap: [AppComponent]

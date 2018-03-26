@@ -8,6 +8,11 @@ import { SummaryComponent } from './summary/summary.component';
         PersonalInformationComponent,
         PhoneListComponent,
         SummaryComponent
+    ],
+    exports : [
+        PersonalInformationComponent,
+        PhoneListComponent,
+        SummaryComponent
     ]
 })
 
