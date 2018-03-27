@@ -1,10 +1,12 @@
 @import "variables/_main";
 @import "app/_main";
+@import "common/extends";
 html,
 body {
     height: 100%;
     width: 100%;
     margin: 0;
-    font-size: 16px;
-    font-family: 'Akkurat Light'
+    font-size: $font-size-180;
+    font-family: 'Akkurat Light';
+    background-color: '$grey-200'
 }
