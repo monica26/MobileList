@@ -1,35 +1,19 @@
-app-footer{
-  display: flex;
-  flex-grow: 1;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #13cec4;
-  justify-content: flex-end;
-  align-items: center;
-  .footer-buttons{
-    height: 70%;
+@import "../../../../scss/variables/colours.scss";
+@import "../../../../scss/variables/font-weight.scss";
+@import "../../../../scss/app/buttons.scss";
+app-footer {
     display: flex;
-    button{
-      height: 100%;
-      width: 100px;
-      color: #464646;
-      font-weight: bold;
-      background-color: white;
-      border: none;
-      border-radius: 2px;
-      margin-right: 15px;
-
-      &:hover{
-      color: white;
-      background-color: #464646;
-      }
-      &:disabled{
-        color: #848484;
-        background-color: #ABABAB;
-      }
+    flex-grow: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: $blue-100;
+    justify-content: flex-end;
+    align-items: center;
+    .footer-buttons {
+        height: 70%;
+        display: flex;
     }
-  }
 }

@@ -1,0 +1,14 @@
+.button-basic {
+    height: 100%;
+    width: 100px;
+    color: $grey-400;
+    font-weight: $font-bold;
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    margin-right: 15px;
+    &:hover {
+        color: white;
+        background-color: $grey-400;
+    }
+}
