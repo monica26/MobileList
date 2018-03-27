@@ -1,0 +1,13 @@
+.input-basic {
+    width: 400px;
+    height: 40px;
+    border-radius: 2px;
+    border: solid 1px $grey-300;
+    &+.input-error-msg {
+        border: solid 1px $red-error;
+    }
+    &:focus {
+        outline: 0px;
+        border: solid 1px $blue-100;
+    }
+}
