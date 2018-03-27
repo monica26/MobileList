@@ -26,6 +26,10 @@ app-footer{
       color: white;
       background-color: #464646;
       }
+      &:disabled{
+        color: #848484;
+        background-color: #ABABAB;
+      }
     }
   }
 }

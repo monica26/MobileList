@@ -10,6 +10,7 @@ export class FooterComponent implements OnInit {
 
   @Input() first?: boolean;
   @Input() end?: boolean;
+  @Input() invalid?: boolean;
   @Input() routerLinkPrevious: string;
   @Input() routerLinkNext: string;
 
