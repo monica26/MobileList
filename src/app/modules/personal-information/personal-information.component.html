@@ -1,27 +1,34 @@
-<form class="detail-form" (ngSubmit)="onSubmit();" #contactForm="ngForm">
-	<div class="form-group">
-			<label for="name">Nombre</label>
-			<input type="text" class="form-control" id="name" required [(ngModel)]="contactForm.name" name="name">
+<div class="personal-container">
+	<div class="title-container">
+		<label>Información Personal</label>
 	</div>
-	<div class="form-group">
-		<label for="lastName">Apellidos</label>
-		<input type="text" class="form-control" id="lastName" required [(ngModel)]="contactForm.lastname" name="lastName">
+	<div class="form-container">
+		<form class="form-detail" (ngSubmit)="onSubmit();" #contactForm="ngForm">
+			<div class="form-group">
+					<label class="form-label" for="name">Nombre</label>
+					<input type="text" class="form-control" id="name" required [(ngModel)]="contactForm.name" name="name">
+			</div>
+			<div class="form-group">
+				<label class="form-label" for="lastName">Apellidos</label>
+				<input type="text" class="form-control" id="lastName" required [(ngModel)]="contactForm.lastname" name="lastName">
+			</div>
+			<div class="form-group">
+				<label class="form-label" for="date">Fecha de nacimiento</label>
+				<input type="date" class="form-control" id="date" required [(ngModel)]="contactForm.date" name="date">
+			</div>
+			<div class="form-group">
+				<label class="form-label" for="email">Email</label>
+				<input type="email" class="form-control" id="email" required [(ngModel)]="contactForm.email" email name="email">
+			</div>
+			<div class="form-group">
+				<label class="form-label" for="direccion">Dirección</label>
+				<input type="text" class="form-control" id="direccion" required [(ngModel)]="contactForm.direccion" name="direccion">
+			</div>
+			<div class="form-group">
+				<label class="form-label" for="codigoPostal">Código postal</label>
+				<input type="number" class="form-control" id="codigoPostal" required [(ngModel)]="contactForm.codigopostal" name="codigoPostal" min="0" max="99999" onKeyPress="if(this.value.length==5) return false;">
+			</div>
+		</form>
 	</div>
-	<div class="form-group">
-		<label for="date">Fecha de nacimiento</label>
-		<input type="date" class="form-control" id="date" required [(ngModel)]="contactForm.date" name="date">
-	</div>
-	<div class="form-group">
-		<label for="email">Email</label>
-		<input type="email" class="form-control" id="email" required [(ngModel)]="contactForm.email" email name="email">
-	</div>
-	<div class="form-group">
-		<label for="direccion">Dirección</label>
-		<input type="text" class="form-control" id="direccion" required [(ngModel)]="contactForm.direccion" name="direccion">
-	</div>
-	<div class="form-group">
-		<label for="codigoPostal">Código postal</label>
-		<input type="number" class="form-control" id="codigoPostal" required [(ngModel)]="contactForm.codigopostal" name="codigoPostal" min="0" max="99999" onKeyPress="if(this.value.length==5) return false;">
-	</div>
-</form>
+</div>
 <app-footer [first]="true" [invalid]="!contactForm.form.valid" [routerLinkNext]="'phone-list'"></app-footer>
