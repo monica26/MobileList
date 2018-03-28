@@ -2,4 +2,25 @@
     <p class="title"> Listado Telefónos </p>
     <p class="subtitle"> Necesitamos que introduzca el alias y número de telefono de los contactos que quiera.</p>
 </div>
+<div class="phone-form">
+    <form>
+        <span>Alias</span>
+        <input type="text" class="input-basic">
+        <span>Número Teléfono</span>
+        <input type="text" class="input-basic">
+    </form>
+</div>
+<div class="list">
+    <div class="header-list">
+        <span>NÚMEROS DE TELÉFONO</span>
+    </div>
+    <div *ngFor="let phone of phoneList;let i = index">
+        <div class="item-list" (mouseout)="mouseOut(i)" (mouseover)="mouseOver(i)">
+            <span class="alias">{{phone.alias}}</span>
+            <span class="number">{{phone.number}}</span>
+            <div *ngIf="i==itemHover && delete"><span>Borrar</span></div>
+            <div class="delete-item-mobile"> <button>Borrar</button></div>
+        </div>
+    </div>
+</div>
 <app-footer [routerLinkPrevious]="'personal-information'" [routerLinkNext]="'summary'"></app-footer>
