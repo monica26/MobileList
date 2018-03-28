@@ -13,4 +13,16 @@ export class PersonalInformationComponent implements OnInit {
   ngOnInit() {
   }
 
+  isNumber(value) {
+    let valueIsNumber = false;
+    if (!!value && value.length > 0) {
+      for (let i = 0; i < value.length; i++) {
+        const character = value.charCodeAt(i);
+        if (character >= 48 && character <= 57) {
+          valueIsNumber = true;
+        }
+      }
+    }
+    return valueIsNumber;
+  }
 }
