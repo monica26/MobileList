@@ -12,7 +12,7 @@
         background-color: $grey-400;
     }
     &:disabled{
-        color: #848484;
-        background-color: #ABABAB;
+        color: $grey-380;
+        background-color: $grey-350;
     }
 }
