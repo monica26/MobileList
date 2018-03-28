@@ -1,13 +1,24 @@
 .input-basic {
-    width: 400px;
-    height: 40px;
-    border-radius: 2px;
-    border: solid 1px $grey-300;
-    &+.input-error-msg {
-        border: solid 1px $red-error;
-    }
-    &:focus {
-        outline: 0px;
-        border: solid 1px $blue-100;
-    }
+	width: 400px;
+	height: 40px;
+	border-radius: 2px;
+	border: solid 1px $grey-300;
+	&+.input-error-msg {
+		border: solid 1px $red-error;
+	}
+	&:focus {
+		outline: 0px;
+		border: solid 1px $blue-100;
+	}
+}
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="date"]::-webkit-inner-spin-button, 
+input[type="date"]::-webkit-outer-spin-button{ 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type="number"],
+input[type="date"]{ 
+    -moz-appearance: test-field; 
 }
