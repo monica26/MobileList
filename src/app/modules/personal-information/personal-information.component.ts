@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactForm } from '../personal-information/contactForm';
+import { ContactForm } from './contactForm';
 
 @Component({
   selector: 'app-personal-information',
@@ -8,9 +8,15 @@ import { ContactForm } from '../personal-information/contactForm';
 })
 export class PersonalInformationComponent implements OnInit {
 
-  constructor() { }
+  contactForm = new ContactForm('', '', null, '', '', null);
+  constructor() {
+  }
 
   ngOnInit() {
+    const data = JSON.parse(localStorage.getItem('Personal-Information'));
+    if (!!data) {
+      this.contactForm = data;
+    }
   }
 
   isNumber(value) {

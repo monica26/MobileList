@@ -3,7 +3,7 @@
 		<label>Información Personal</label>
 	</div>
 	<div class="form-container">
-		<form class="form-detail" (ngSubmit)="onSubmit();" #contactForm="ngForm">
+		<form class="form-detail" #contact="ngForm">
 			<div class="form-group">
 					<label class="form-label" for="name">Nombre</label>
 					<input type="text" class="form-control" id="name" required [(ngModel)]="contactForm.name" name="name" #name="ngModel">
@@ -15,12 +15,12 @@
 					</span>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="lastName">Apellidos</label>
-				<input type="text" class="form-control" id="lastName" required [(ngModel)]="contactForm.lastname" name="lastName" #lastName="ngModel">
-				<span class="input-error" *ngIf="lastName.invalid && lastName.value">
+				<label class="form-label" for="lastname">Apellidos</label>
+				<input type="text" class="form-control" id="lastname" required [(ngModel)]="contactForm.lastname" name="lastname" #lastname="ngModel">
+				<span class="input-error" *ngIf="lastname.invalid && lastname.value">
 					Campo obligatorio
 				</span>
-				<span class="input-error" *ngIf="lastName.valid && lastName.value && isNumber(lastName.value)">
+				<span class="input-error" *ngIf="lastname.valid && lastname.value && isNumber(lastname.value)">
 					No se permiten números
 				</span>
 			</div>
@@ -36,14 +36,14 @@
 				</span>
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="direccion">Dirección</label>
-				<input type="text" class="form-control" id="direccion" required [(ngModel)]="contactForm.direccion" name="direccion">
+				<label class="form-label" for="address">Dirección</label>
+				<input type="text" class="form-control" id="address" required [(ngModel)]="contactForm.address" name="address">
 			</div>
 			<div class="form-group">
-				<label class="form-label" for="codigoPostal">Código postal</label>
-				<input type="number" class="form-control" id="codigoPostal" required [(ngModel)]="contactForm.codigopostal" name="codigoPostal" min="0" max="99999" onKeyPress="if(this.value.length==5) return false;">
+				<label class="form-label" for="zipcode">Código postal</label>
+				<input type="number" class="form-control" id="zipcode" required [(ngModel)]="contactForm.zipcode" name="zipcode" min="0" max="99999" onKeyPress="if(this.value.length==5) return false;">
 			</div>
 		</form>
 	</div>
 </div>
-<app-footer [first]="true" [invalid]="!contactForm.form.valid || isNumber(name.value) || isNumber(lastName.value)" [routerLinkNext]="'phone-list'"></app-footer>
+<app-footer [first]="true" [invalid]="!contact.form.valid || isNumber(name.value) || isNumber(lastname.value)" [routerLinkNext]="'phone-list'" [contactForm]="contact.value"></app-footer>
