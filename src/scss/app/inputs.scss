@@ -1,11 +1,19 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    // &+.input-error {
+    //     color: $red-error;
+    // }
+}
+
 .input-basic {
     width: 25rem;
     height: 2.5rem;
     border-radius: 2px;
     border: solid 1px $grey-300;
-    &+.input-error-msg {
-        border: solid 1px $red-error;
-    }
+    // &+.input-error-msg {
+    //     border: solid 1px $red-error;
+    // }
     &:focus {
         outline: 0px;
         border: solid 1px $blue-100;
