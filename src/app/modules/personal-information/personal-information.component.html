@@ -46,4 +46,4 @@
 		</form>
 	</div>
 </div>
-<app-footer [first]="true" [invalid]="!contactForm.form.valid" [routerLinkNext]="'phone-list'"></app-footer>
+<app-footer [first]="true" [invalid]="!contactForm.form.valid || isNumber(name.value) || isNumber(lastName.value)" [routerLinkNext]="'phone-list'"></app-footer>
