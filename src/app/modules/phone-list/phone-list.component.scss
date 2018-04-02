@@ -6,13 +6,35 @@ app-phone-list {
         flex-direction: column;
         justify-content: center;
     }
-    .phone-form {
-        margin-bottom: 1rem;
+    .body-form {
+        display: flex;
+        justify-content: center;
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid $grey-100;
+        border-radius: 2px;
+        box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.1);
+        .phone-form {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            .button-icon {
+                .icon-add {
+                    color: $blue-100;
+                }
+                &:hover {
+                    .icon-add {
+                        color: $blue-200;
+                    }
+                }
+            }
+        }
     }
-    .list {
+    .body-list {
         display: flex;
         flex-direction: column;
-        width: 80%;
+        justify-content: center;
+        margin: 1rem;
         max-height: 50%;
         overflow-y: auto;
         background-color: white;
@@ -25,21 +47,34 @@ app-phone-list {
             padding: 1.75rem;
         }
         .item-list {
+            display: flex;
             padding: 0.75rem;
             border-bottom: solid 1px $grey-300;
-            .alias {
-                color: $grey-400;
-            }
-            .number {
-                color: $grey-300;
+            .item-data {
+                display: flex;
+                flex: 1;
+                .alias {
+                    color: $grey-400;
+                }
+                .number {
+                    color: $grey-300;
+                }
             }
             &:hover {
                 background-color: $grey-200;
+            }
+            .delete-item-mobile {
+                .btn-delete-item-mobile {}
             }
         }
     }
     @media (min-width: 700px) {
         .delete-item-mobile {
+            display: none;
+        }
+    }
+    @media (max-width: 700px) {
+        .delete-item-desktop {
             display: none;
         }
     }

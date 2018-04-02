@@ -2,25 +2,52 @@
     <p class="title"> Listado Telefónos </p>
     <p class="subtitle"> Necesitamos que introduzca el alias y número de telefono de los contactos que quiera.</p>
 </div>
-<div class="phone-form">
-    <form>
-        <span>Alias</span>
-        <input type="text" class="input-basic">
-        <span>Número Teléfono</span>
-        <input type="text" class="input-basic">
+<div class="body-form">
+    <form class="phone-form" (ngSubmit)="addPhone()" #formPhoneList="ngForm">
+        <div class="input">
+            <span>Alias</span>
+            <input type="text" required class="input-basic" [(ngModel)]="phone.alias" name="alias">
+        </div>
+        <div class="input">
+            <!-- [ngClass]="{'input-error':phoneNumber.invalid}" -->
+            <span>Número Teléfono</span>
+            <input type="text" required class="input-basic" [(ngModel)]="phone.phone" name="phoneNumber" pattern="[0-9]{9}" #phoneNumber="ngModel">
+            <!-- [ngClass]="{'input-error-msg': phoneNumber.invalid}" -->
+            <!-- <span *ngIf="phoneNumber.invalid"> Formato no válid. 9 Digitos</span> -->
+        </div>
+        <button type="submit" class="button-icon" [disabled]="!formPhoneList.form.valid">
+                <i class="material-icons icon-add">add_circle</i>
+                <span>AÑADIR</span> 
+        </button>
     </form>
 </div>
-<div class="list">
+<div class="body-list" *ngIf="phoneList.length > 0">
     <div class="header-list">
         <span>NÚMEROS DE TELÉFONO</span>
     </div>
     <div *ngFor="let phone of phoneList;let i = index">
-        <div class="item-list" (mouseout)="mouseOut(i)" (mouseover)="mouseOver(i)">
-            <span class="alias">{{phone.alias}}</span>
-            <span class="number">{{phone.number}}</span>
-            <div *ngIf="i==itemHover && delete"><span>Borrar</span></div>
-            <div class="delete-item-mobile"> <button>Borrar</button></div>
+        <div class="item-list" (mouseleave)="mouseLeave(i)" (mouseenter)="mouseEnter(i)">
+            <div class="item-data">
+                <span class="alias">{{phone.alias}}</span>
+                <span class="number">{{phone.phone}}</span>
+            </div>
+            <div class="delete-item-desktop" *ngIf="i==itemSelected && delete">
+                <button class="button-icon" (click)="deletePhone(i)">
+                    <i class="material-icons icon-add">remove_circle</i>
+                    <span>ELIMINAR</span>
+                </button>
+            </div>
+            <div class="delete-item-mobile">
+                <button class="button-icon" (click)="openDeleteOption()"><i class="material-icons">keyboard_arrow_down</i></button>
+                <div class="btn-delete-item-mobile" *ngIf="i==itemSelected && deleteOption">
+                    <button class="button-icon" (click)="deletePhone(i)">
+                        <i class="material-icons icon-add">remove_circle</i>
+                        <span>ELIMINAR</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 <app-footer [routerLinkPrevious]="'personal-information'" [routerLinkNext]="'summary'"></app-footer>

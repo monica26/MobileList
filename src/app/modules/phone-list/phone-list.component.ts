@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Phone } from '../../shared/models/phone.model';
 
 @Component({
   selector: 'app-phone-list',
@@ -7,35 +8,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhoneListComponent implements OnInit {
 
-  phoneList = [
-    {alias: 'Pepe', number: '6262626262'},
-    {alias: 'Juan', number: '88872342'},
-    {alias: 'Ana', number: '222134222'},
-    {alias: 'Maria', number: '09877765'},
-    {alias: 'Luis', number: '34522344'},
-    {alias: 'Jose', number: '1234567'}
- ];
+  public phone: Phone;
+  public phoneList: Array<Phone>;
+  public alias;
+  public deleteOption = false;
+
+//   phoneList = [
+//     {alias: 'Pepe', number: '6262626262'},
+//     {alias: 'Juan', number: '88872342'},
+//     {alias: 'Ana', number: '222134222'},
+//     {alias: 'Maria', number: '09877765'},
+//     {alias: 'Luis', number: '34522344'},
+//     {alias: 'Jose', number: '1234567'}
+//  ];
  public delete = false;
- public itemHover;
+ public itemSelected;
 
   constructor() { }
 
   ngOnInit() {
-  }
+    this.phone = new Phone('', null);
 
-  // funcion activada por mouseover al pasar por encima del elemento
+    if (localStorage.getItem('PhoneList')) {
+      this.phoneList = JSON.parse(localStorage.getItem('PhoneList'));
+    } else {
+      this.phoneList = [];
+    }
+   }
 
-  mouseOver(element) {
-    console.log('mouseOver -> ' + element);
-    this.delete = true;
-    this.itemHover = element;
-  }
-
-  mouseOut(element) {
-    console.log('mouseOut -> ' + element);
+  mouseLeave(element) {
     this.delete = false;
-    this.itemHover = -1;
+    this.itemSelected = -1;
   }
 
+  mouseEnter(element) {
+    this.delete = true;
+    this.itemSelected = element;
+  }
+
+  deletePhone(element: number) {
+    this.phoneList.splice(element, 1);
+  }
+
+  addPhone() {
+    this.phoneList.push(this.phone);
+    this.phone = new Phone('', null);
+    localStorage.setItem('PhoneList', JSON.stringify(this.phoneList));
+  }
+
+  openDeleteOption() {
+    this.deleteOption ? this.deleteOption = false : this.deleteOption = true;
+  }
 
 }
