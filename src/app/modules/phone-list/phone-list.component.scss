@@ -1,32 +1,29 @@
 @import "../../../scss/variables/colours.scss";
 @import "../../../scss/variables/font-weight.scss";
+@import "../../../scss/variables/font-size.scss";
 app-phone-list {
+    .phone-list {
+        overflow-y: auto;
+    }
     .header {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .body-form {
-        display: flex;
-        justify-content: center;
-        margin: 1rem;
-        padding: 1rem;
+    .form-phone-list {
+        background-color: white;
         border: 1px solid $grey-100;
         border-radius: 2px;
         box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.1);
-        .phone-form {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            .button-icon {
-                .icon-add {
-                    color: $blue-100;
-                }
-                &:hover {
-                    .icon-add {
-                        color: $blue-200;
-                    }
-                }
+        margin: 2rem;
+    }
+    .button-icon {
+        .icon-add {
+            color: $blue-100;
+        }
+        &:hover {
+            .icon-add {
+                color: $blue-200;
             }
         }
     }
@@ -34,7 +31,7 @@ app-phone-list {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 1rem;
+        margin: 2rem;
         max-height: 50%;
         overflow-y: auto;
         background-color: white;
@@ -49,6 +46,7 @@ app-phone-list {
         .item-list {
             display: flex;
             padding: 0.75rem;
+            margin: 0 1rem;
             border-bottom: solid 1px $grey-300;
             .item-data {
                 display: flex;
@@ -63,17 +61,24 @@ app-phone-list {
             &:hover {
                 background-color: $grey-200;
             }
-            .delete-item-mobile {
-                .btn-delete-item-mobile {}
-            }
+        }
+        .btn-delete-item-mobile {
+            display: flex;
+            padding: 0.75rem;
         }
     }
-    @media (min-width: 700px) {
+    @media (min-width: 992px) {
+        .btn-delete-item-mobile {
+            display: none;
+        }
         .delete-item-mobile {
             display: none;
         }
     }
-    @media (max-width: 700px) {
+    @media (max-width: 992px) {
+        .btn-delete-item-mobile {
+            display: none;
+        }
         .delete-item-desktop {
             display: none;
         }
