@@ -1,0 +1,26 @@
+.form-container{
+	display: flex;
+	justify-content: center;
+	padding: 40px;
+
+	.form-detail{
+		display: flex;
+		flex-wrap: wrap;
+		.form-group{
+			display: flex;
+			flex-grow: 1;
+			flex-direction: column;
+			width: 45%;
+			padding: 10px;
+			.form-label{
+				font-size: $font-size-200;
+				font-weight: $font-bold;
+			}
+			.input-error{
+				color: $red-error;
+				font-size: $font-size-100;
+				font-weight: $font-bold;
+			}
+		}
+	}
+}

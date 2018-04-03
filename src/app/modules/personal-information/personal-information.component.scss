@@ -1,0 +1,23 @@
+@import "../../../scss/variables/colours.scss";
+@import "../../../scss/variables/font-size.scss";
+@import "../../../scss/variables/font-weight.scss";
+app-personal-information {
+	display: flex;
+	justify-content: center;
+	.personal-container{
+		display:flex;
+		flex-grow: 1;
+		flex-direction: column;
+		background-color: white;
+		align-items: center;
+		margin: 30px;
+
+		.title-container{
+			display: flex;
+			padding-top: 20px;
+			color: $blue-300;
+			font-size: $font-size-700;
+			font-weight: $font-bold;
+		}
+	}
+}
