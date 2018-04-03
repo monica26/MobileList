@@ -1,0 +1,26 @@
+.title-container{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	padding-top: 20px;
+	color: $blue-300;
+	font-size: $font-size-700;
+	font-weight: $font-bold;
+}
+.section-title{
+	display: flex;
+	flex-grow: 1;
+  padding: 10px 5%;
+	background-color: $grey-200;
+	font-size: $font-size-330;
+	font-weight: $font-bold;
+}
+
+.item-title{
+	width: 20%;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 2%;
+	font-size: $font-size-280;
+	font-weight: $font-bold;
+}

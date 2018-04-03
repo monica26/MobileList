@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Routes, Router } from '@angular/router';
-import { ContactForm } from './../../../modules/personal-information/contactForm';
+import { ContactForm } from '../../models/contactForm.model';
 
 @Component({
   selector: 'app-footer',
