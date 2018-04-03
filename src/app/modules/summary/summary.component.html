@@ -1,4 +1,8 @@
-<p>
-  summary works!
-</p>
+<div class="summary-container">
+  <div class="title-container">
+    <label>Resumen</label>
+  </div>
+  <app-data-summary [sectionTitle]="'Datos Personales'" [list]="listPersonal"></app-data-summary>
+  <app-data-summary [sectionTitle]="'Datos Móviles'" [list]="listMobiles"></app-data-summary>
+</div>
 <app-footer [end]="true" [routerLinkPrevious]="'phone-list'"></app-footer>

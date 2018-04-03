@@ -1,0 +1,14 @@
+@import "../../../scss/variables/colours.scss";
+@import "../../../scss/variables/font-size.scss";
+@import "../../../scss/variables/font-weight.scss";
+app-summary {
+	display: flex;
+	.summary-container{
+		display:flex;
+		flex-grow: 1;
+		flex-direction: column;
+		background-color: white;
+		margin: 5%;
+		padding-bottom: 30px;		
+	}
+}
