@@ -12,17 +12,9 @@ export class PhoneListComponent implements OnInit {
   public phoneList: Array<Phone>;
   public alias;
   public deleteOption = false;
-
-//   phoneList = [
-//     {alias: 'Pepe', number: '6262626262'},
-//     {alias: 'Juan', number: '88872342'},
-//     {alias: 'Ana', number: '222134222'},
-//     {alias: 'Maria', number: '09877765'},
-//     {alias: 'Luis', number: '34522344'},
-//     {alias: 'Jose', number: '1234567'}
-//  ];
- public delete = false;
- public itemSelected;
+  public delete = false;
+  public itemSelected;
+  public itemSelectedMobile;
 
   constructor() { }
 
@@ -38,7 +30,7 @@ export class PhoneListComponent implements OnInit {
 
   mouseLeave(element) {
     this.delete = false;
-    this.itemSelected = -1;
+    this.itemSelected = null;
   }
 
   mouseEnter(element) {
@@ -48,6 +40,10 @@ export class PhoneListComponent implements OnInit {
 
   deletePhone(element: number) {
     this.phoneList.splice(element, 1);
+    if (this.phoneList.length <= 0) {
+      this.itemSelected = null;
+      this.itemSelectedMobile = null;
+    }
   }
 
   addPhone() {
@@ -56,7 +52,8 @@ export class PhoneListComponent implements OnInit {
     localStorage.setItem('PhoneList', JSON.stringify(this.phoneList));
   }
 
-  openDeleteOption() {
+  openDeleteOption(element) {
+    this.itemSelectedMobile = element;
     this.deleteOption ? this.deleteOption = false : this.deleteOption = true;
   }
 
