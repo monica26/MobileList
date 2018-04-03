@@ -5,8 +5,8 @@
     <div class="form-container">
         <form class="form-detail" #contact="ngForm">
             <div class="form-group">
-                <label class="form-label" for="name">Nombre</label>
-                <input type="text" class="form-control" id="name" required [(ngModel)]="contactForm.name" name="name" #name="ngModel">
+                <label class="form-label" for="name" [ngClass]="{'input-error': (name.invalid && name.value)||(name.valid && name.value && isNumber(name.value))}">Nombre</label>
+                <input type="text" class="input-basic" id="name" required [(ngModel)]="contactForm.name" name="name" #name="ngModel" [ngClass]="{'input-error-msg': (name.invalid && name.value)||(name.valid && name.value && isNumber(name.value))}">
                 <span class="input-error" *ngIf="name.invalid && name.value">
 						Campo obligatorio
 					</span>
@@ -15,8 +15,8 @@
 					</span>
             </div>
             <div class="form-group">
-                <label class="form-label" for="lastname">Apellidos</label>
-                <input type="text" class="form-control" id="lastname" required [(ngModel)]="contactForm.lastname" name="lastname" #lastname="ngModel">
+                <label class="form-label" for="lastname" [ngClass]="{'input-error': (lastname.invalid && lastname.value)||(lastname.valid && lastname.value && isNumber(lastname.value))}">Apellidos</label>
+                <input type="text" class="input-basic" id="lastname" required [(ngModel)]="contactForm.lastname" name="lastname" #lastname="ngModel" [ngClass]="{'input-error-msg': (lastname.invalid && lastname.value)||(lastname.valid && lastname.value && isNumber(lastname.value))}">
                 <span class="input-error" *ngIf="lastname.invalid && lastname.value">
 					Campo obligatorio
 				</span>
@@ -26,22 +26,22 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="date">Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="date" required [(ngModel)]="contactForm.date" name="date">
+                <input type="date" class="input-basic" id="date" required [(ngModel)]="contactForm.date" name="date">
             </div>
             <div class="form-group">
-                <label class="form-label" for="email">Email</label>
-                <input type="email" class="form-control" id="email" required [(ngModel)]="contactForm.email" email name="email" #email="ngModel">
+                <label class="form-label" for="email" [ngClass]="{'input-error': email.invalid && email.value}">Email</label>
+                <input type="email" class="input-basic" id="email" required [(ngModel)]="contactForm.email" email name="email" #email="ngModel" [ngClass]="{'input-error-msg': email.invalid && email.value}">
                 <span class="input-error" *ngIf="email.invalid && email.value">
 					El email no es válido
 				</span>
             </div>
             <div class="form-group">
                 <label class="form-label" for="address">Dirección</label>
-                <input type="text" class="form-control" id="address" required [(ngModel)]="contactForm.address" name="address">
+                <input type="text" class="input-basic" id="address" required [(ngModel)]="contactForm.address" name="address">
             </div>
             <div class="form-group">
                 <label class="form-label" for="zipcode">Código postal</label>
-                <input type="number" class="form-control" id="zipcode" required [(ngModel)]="contactForm.zipcode" name="zipcode" min="0" max="99999" onKeyPress="if(this.value.length==5) return false;">
+                <input type="number" class="input-basic" id="zipcode" required [(ngModel)]="contactForm.zipcode" name="zipcode" min="0" max="99999" onKeyPress="if(this.value.length==5) return false;">
             </div>
         </form>
     </div>
