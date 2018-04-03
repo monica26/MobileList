@@ -4,7 +4,7 @@
         <p class="subtitle"> Rellene los datos requeridos como información personal.</p>
     </div>
     <div class="form-container">
-        <form class="form-detail" #contact="ngForm">
+        <form class="form-detail" #contact="ngForm" autocomplete="off">
             <div class="form-group">
                 <label class="form-label" for="name" [ngClass]="{'input-error': (name.invalid && name.value)||(name.valid && name.value && isNumber(name.value))}">Nombre</label>
                 <input type="text" class="input-basic" id="name" required [(ngModel)]="contactForm.name" name="name" #name="ngModel" [ngClass]="{'input-error-msg': (name.invalid && name.value)||(name.valid && name.value && isNumber(name.value))}">
