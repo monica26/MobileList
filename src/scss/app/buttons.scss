@@ -21,8 +21,7 @@
     background-color: transparent;
     border: none;
     i {
-        height: 15px;
-        width: 15px;
+        font-size: 15px;
         margin-left: 10px;
     }
 }
@@ -34,8 +33,4 @@ button {
 
 button[disabled] {
     opacity: 0.5;
-}
-
-button:active {
-    border: none;
 }
