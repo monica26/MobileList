@@ -6,27 +6,13 @@ app-phone-list {
         flex-direction: column;
         justify-content: center;
     }
-    .body-form {
-        display: flex;
-        justify-content: center;
-        margin: 1rem;
-        padding: 1rem;
-        border: 1px solid $grey-100;
-        border-radius: 2px;
-        box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.1);
-        .phone-form {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            .button-icon {
-                .icon-add {
-                    color: $blue-100;
-                }
-                &:hover {
-                    .icon-add {
-                        color: $blue-200;
-                    }
-                }
+    .button-icon {
+        .icon-add {
+            color: $blue-100;
+        }
+        &:hover {
+            .icon-add {
+                color: $blue-200;
             }
         }
     }
@@ -68,12 +54,12 @@ app-phone-list {
             }
         }
     }
-    @media (min-width: 700px) {
+    @media (min-width: 992px) {
         .delete-item-mobile {
             display: none;
         }
     }
-    @media (max-width: 700px) {
+    @media (max-width: 992px) {
         .delete-item-desktop {
             display: none;
         }

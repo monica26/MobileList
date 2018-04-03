@@ -2,23 +2,27 @@
     <p class="title"> Listado Telefónos </p>
     <p class="subtitle"> Necesitamos que introduzca el alias y número de telefono de los contactos que quiera.</p>
 </div>
-<div class="body-form">
-    <form class="phone-form" (ngSubmit)="addPhone()" #formPhoneList="ngForm">
-        <div class="input">
+<div class="form-container">
+    <form class="form-detail" (ngSubmit)="addPhone()" #formPhoneList="ngForm">
+        <div class="form-group">
             <span>Alias</span>
             <input type="text" required class="input-basic" [(ngModel)]="phone.alias" name="alias">
         </div>
-        <div class="input">
+        <div class="form-group">
             <!-- [ngClass]="{'input-error':phoneNumber.invalid}" -->
             <span>Número Teléfono</span>
             <input type="text" required class="input-basic" [(ngModel)]="phone.phone" name="phoneNumber" pattern="[0-9]{9}" #phoneNumber="ngModel">
             <!-- [ngClass]="{'input-error-msg': phoneNumber.invalid}" -->
-            <!-- <span *ngIf="phoneNumber.invalid"> Formato no válid. 9 Digitos</span> -->
+            <!-- <span *ngIf="phoneNumber.invalid"> Formato no válido. 9 Digitos</span> -->
         </div>
-        <button type="submit" class="button-icon" [disabled]="!formPhoneList.form.valid">
+        <!-- <div class="form-group"> -->
+        <div>
+            <button type="submit" class="button-icon" [disabled]="!formPhoneList.form.valid">
                 <i class="material-icons icon-add">add_circle</i>
                 <span>AÑADIR</span> 
-        </button>
+            </button>
+        </div>
+        <!-- </div> -->
     </form>
 </div>
 <div class="body-list" *ngIf="phoneList.length > 0">
