@@ -1,34 +1,42 @@
 .input {
-    display: flex;
-    flex-direction: column;
-    // &+.input-error {
-    //     color: $red-error;
-    // }
+	display: flex;
+	flex-direction: column;
+	// &+.input-error {
+	//     color: $red-error;
+	// }
 }
 
 .input-basic {
-    width: 25rem;
-    height: 2.5rem;
-    border-radius: 2px;
-    border: solid 1px $grey-300;
-    &:focus {
-        outline: 0px;
-        border: solid 1px $blue-100;
-    }
-    &+.input-error-msg {
-        border: solid 1px $red-error;
-    }
+	height: 2.5rem;
+	border-radius: 2px;
+	font-family: 'Akkurat Light';
+	border: solid 1px $grey-300;
+	&:focus {
+		outline: 0px;
+		border: solid 1px $blue-100;
+	}
+	&.input-error-msg {
+		border: solid 1px $red-error;
+	}
 }
+
+.input-error{
+	color: $red-error;
+	font-size: $font-size-100;
+	font-weight: $font-bold;
+}
+
+
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button,
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 input[type="number"],
 input[type="date"] {
-    -moz-appearance: test-field;
+	-moz-appearance: test-field;
 }
