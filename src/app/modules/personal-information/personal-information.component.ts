@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactForm } from './contactForm';
+import { ContactForm } from '../../shared/models/contact-form.model';
+import { DataService } from '../../shared/services/data.service';
+
 
 @Component({
   selector: 'app-personal-information',
@@ -9,11 +11,11 @@ import { ContactForm } from './contactForm';
 export class PersonalInformationComponent implements OnInit {
 
   contactForm = new ContactForm('', '', null, '', '', null);
-  constructor() {
+  constructor(private data: DataService) {
   }
 
   ngOnInit() {
-    const data = JSON.parse(localStorage.getItem('Personal-Information'));
+    const data = this.data.getLocalStorage('Personal-Information');
     if (!!data) {
       this.contactForm = data;
     }

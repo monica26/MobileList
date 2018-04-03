@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Phone } from '../../shared/models/phone.model';
+import { DataService } from '../../shared/services/data.service';
 
 @Component({
   selector: 'app-phone-list',
@@ -16,13 +17,14 @@ export class PhoneListComponent implements OnInit {
   public itemSelected;
   public itemSelectedMobile;
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
     this.phone = new Phone('', null);
+    const data = this.data.getLocalStorage('PhoneList');
 
-    if (localStorage.getItem('PhoneList')) {
-      this.phoneList = JSON.parse(localStorage.getItem('PhoneList'));
+    if ( data ) {
+      this.phoneList = data;
     } else {
       this.phoneList = [];
     }
@@ -49,7 +51,7 @@ export class PhoneListComponent implements OnInit {
   addPhone() {
     this.phoneList.push(this.phone);
     this.phone = new Phone('', null);
-    localStorage.setItem('PhoneList', JSON.stringify(this.phoneList));
+    this.data.setLocalStorage('PhoneList', this.phoneList);
   }
 
   openDeleteOption(element) {

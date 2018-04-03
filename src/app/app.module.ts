@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './shared/components/components.module';
 import { ModulesModule } from './modules/modules.module';
 import { APP_ROUTES } from './app.routes';
+import { DataService } from './shared/services/data.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { APP_ROUTES } from './app.routes';
     FormsModule,
     CommonModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

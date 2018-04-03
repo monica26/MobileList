@@ -5,6 +5,7 @@ import { SummaryComponent } from './summary/summary.component';
 import { ComponentsModule } from './../shared/components/components.module';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../shared/services/data.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,9 @@ import { CommonModule } from '@angular/common';
     ComponentsModule,
     FormsModule,
     CommonModule
+  ],
+  providers: [
+    DataService
   ]
 })
 

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Routes, Router } from '@angular/router';
-import { ContactForm } from './../../../modules/personal-information/contactForm';
+import { ContactForm } from '../../models/contact-form.model';
+import { DataService } from '../../services/data.service';
+
 
 @Component({
   selector: 'app-footer',
@@ -16,7 +18,7 @@ export class FooterComponent implements OnInit {
   @Input() routerLinkNext: string;
   @Input() contactForm: ContactForm;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private data: DataService) {
   }
 
   ngOnInit() {
@@ -24,7 +26,7 @@ export class FooterComponent implements OnInit {
 
   clickButtonFooter(link) {
     if (!!this.contactForm) {
-      localStorage.setItem('Personal-Information', JSON.stringify(this.contactForm));
+      this.data.setLocalStorage('Personal-Information', this.contactForm);
     }
     this.router.navigate(['/' + link]);
   }

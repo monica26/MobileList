@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './shared/services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {
-    localStorage.clear();
+  constructor(private data: DataService) {
+    this.data.clearLocalStorage();
   }
 
 }
