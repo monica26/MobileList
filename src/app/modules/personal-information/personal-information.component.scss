@@ -9,15 +9,6 @@ app-personal-information {
 		flex-grow: 1;
 		flex-direction: column;
 		background-color: white;
-		align-items: center;
-		margin: 30px;
-
-		.title-container{
-			display: flex;
-			padding-top: 20px;
-			color: $blue-300;
-			font-size: $font-size-700;
-			font-weight: $font-bold;
-		}
+		margin: 5%;
 	}
 }

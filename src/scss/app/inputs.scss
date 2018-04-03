@@ -16,7 +16,7 @@
         outline: 0px;
         border: solid 1px $blue-100;
     }
-    &+.input-error-msg {
+    &.input-error-msg {
         border: solid 1px $red-error;
     }
 }

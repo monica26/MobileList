@@ -1,8 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Routes, Router } from '@angular/router';
-import { ContactForm } from '../../models/contact-form.model';
 import { DataService } from '../../services/data.service';
-
+import { ContactForm } from '../../models/contactForm.model';
 
 @Component({
   selector: 'app-footer',

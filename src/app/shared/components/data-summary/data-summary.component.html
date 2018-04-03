@@ -1,3 +1,10 @@
-<p>
-  data-summary works!
-</p>
+<div class="data-summary-container">
+  <div class="summary-title">
+    <div class="img-title"></div>
+    <label class="section-title">{{sectionTitle}}</label>
+  </div>
+  <div class="summary-item" *ngFor="let item of list">
+    <label class="item-title">{{item.title}}</label>
+    <label class="item-value">{{item.value}}</label>
+  </div>
+</div>

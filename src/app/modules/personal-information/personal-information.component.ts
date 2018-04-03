@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactForm } from '../../shared/models/contact-form.model';
 import { DataService } from '../../shared/services/data.service';
-
+import { ContactForm } from '../../shared/models/contactForm.model';
 
 @Component({
   selector: 'app-personal-information',

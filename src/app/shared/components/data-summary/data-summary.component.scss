@@ -1,0 +1,26 @@
+@import "../../../../scss/variables/colours.scss";
+
+app-data-summary {
+  display: flex;
+  .data-summary-container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+
+    .summary-title{
+      display:flex;
+      .img-title{
+        width: 12px;
+        background-color: $blue-100;
+      }
+    }
+    .summary-item{
+      display: flex;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 6px 0;
+      padding-left: 10%;
+    }
+  }
+}
