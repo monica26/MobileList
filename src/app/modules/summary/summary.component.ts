@@ -36,7 +36,27 @@ export class SummaryComponent implements OnInit {
     const dataPersonal = JSON.parse(localStorage.getItem('Personal-Information'));
     if (!!dataPersonal) {
       Object.keys(dataPersonal).map(key => {
-        this.listPersonal.push(new ListSummary(key, dataPersonal[key]));
+        let llave;
+        switch (key) {
+          case 'name':
+            llave = 'Nombre';
+            break;
+          case 'lastname':
+            llave = 'Apellidos';
+            break;
+          case 'date':
+            llave = 'Fecha de nacimiento';
+            break;
+          case 'email':
+            llave = 'Correo electrónico';
+            break;
+          case 'address':
+            llave = 'Dirección';
+            break;
+          default:
+            llave = 'Código postal';
+        }
+        this.listPersonal.push(new ListSummary(llave, dataPersonal[key]));
       });
     }
     const dataMobiles = JSON.parse(localStorage.getItem('PhoneList'));
