@@ -2,13 +2,11 @@
 @import "../../../scss/variables/font-size.scss";
 @import "../../../scss/variables/font-weight.scss";
 app-personal-information {
-	display: flex;
-	justify-content: center;
-	.personal-container{
-		display:flex;
-		flex-grow: 1;
-		flex-direction: column;
-		background-color: white;
-		margin: 5%;
-	}
+    display: flex;
+    justify-content: center;
+    .personal-container {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+    }
 }
