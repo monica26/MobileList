@@ -4,7 +4,7 @@
         <p class="subtitle"> Necesitamos que introduzca el alias y número de telefono de los contactos que quiera.</p>
     </div>
     <div class="form-container">
-        <form class="form-detail" (ngSubmit)="addPhone()" #formPhoneList="ngForm">
+        <form class="form-detail" (ngSubmit)="addPhone()" #formPhoneList="ngForm" autocomplete="off">
             <div class="form-group-phone">
                 <span class="form-label">Alias</span>
                 <input type="text" required class="input-basic" [(ngModel)]="phone.alias" name="alias">
