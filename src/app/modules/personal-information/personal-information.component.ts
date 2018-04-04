@@ -21,15 +21,14 @@ export class PersonalInformationComponent implements OnInit {
   }
 
   isNumber(value) {
-    let valueIsNumber = false;
-    if (!!value && value.length > 0) {
-      for (let i = 0; i < value.length; i++) {
-        const character = value.charCodeAt(i);
-        if (character >= 48 && character <= 57) {
-          valueIsNumber = true;
-        }
-      }
-    }
-    return valueIsNumber;
+    return (!!value) ?
+      value.split('').some(element => (element.charCodeAt(0) >= 48 && element.charCodeAt(0) <= 57))
+      : false;
+  }
+
+  isNotNumber(value) {
+    return (!!value) ?
+      value.split('').some(element => (element.charCodeAt(0) < 48 || element.charCodeAt(0) > 57))
+      : false;
   }
 }

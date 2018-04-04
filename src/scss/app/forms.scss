@@ -27,10 +27,12 @@
             flex-grow: 1;
             flex-direction: column;
             padding: 10px;
-            align-self: center;
             .form-label {
                 font-size: $font-size-200;
                 font-weight: $font-bold;
+            }
+            &.form-group-add{
+                align-self: center;
             }
         }
     }

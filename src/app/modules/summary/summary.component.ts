@@ -37,6 +37,7 @@ export class SummaryComponent implements OnInit {
     if (!!dataPersonal) {
       Object.keys(dataPersonal).map(key => {
         let llave;
+        let date = false;
         switch (key) {
           case 'name':
             llave = 'Nombre';
@@ -46,6 +47,7 @@ export class SummaryComponent implements OnInit {
             break;
           case 'date':
             llave = 'Fecha de nacimiento';
+            date = true;
             break;
           case 'email':
             llave = 'Correo electrónico';
@@ -56,7 +58,13 @@ export class SummaryComponent implements OnInit {
           default:
             llave = 'Código postal';
         }
-        this.listPersonal.push(new ListSummary(llave, dataPersonal[key]));
+        if (date) {
+          const options = { year: 'numeric', month: 'long', day: 'numeric' };
+          const birthdate = new Date(dataPersonal[key]).toLocaleDateString('es-ES', options);
+          this.listPersonal.push(new ListSummary(llave, birthdate));
+        } else {
+          this.listPersonal.push(new ListSummary(llave, dataPersonal[key]));
+        }
       });
     }
     const dataMobiles = JSON.parse(localStorage.getItem('PhoneList'));

@@ -59,4 +59,10 @@ export class PhoneListComponent implements OnInit {
     this.deleteOption ? this.deleteOption = false : this.deleteOption = true;
   }
 
+  isNotNumber(value) {
+    return (!!value) ?
+      value.split('').some(element => (element.charCodeAt(0) < 48 || element.charCodeAt(0) > 57))
+      : false;
+  }
+
 }
