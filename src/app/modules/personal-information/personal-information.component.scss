@@ -8,5 +8,9 @@ app-personal-information {
         display: flex;
         flex-grow: 1;
         flex-direction: column;
+        // overflow-y: auto;
+        // min-height: 100%;
+        // margin-bottom: -50px;
+        // padding-bottom: 50px;
     }
 }

@@ -4,6 +4,9 @@
 app-phone-list {
     .phone-list {
         overflow-y: auto;
+        min-height: 100%;
+        margin-bottom: -50px;
+        padding-bottom: 50px;
     }
     .button-icon {
         .icon-add {
