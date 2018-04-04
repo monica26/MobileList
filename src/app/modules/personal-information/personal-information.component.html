@@ -42,10 +42,10 @@
             </div>
             <div class="form-group">
                 <span class="form-label" for="zipcode" [ngClass]="{'input-error': (zipcode.invalid && zipcode.value) || (zipcode.valid && zipcode.value && isNotNumber(zipcode.value))}">Código postal</span>
-                <input type="text" class="input-basic" id="zipcode" required [(ngModel)]="contactForm.zipcode" name="zipcode" onKeyPress="if(this.value.length==5) return false;" #zipcode="ngModel" [ngClass]="{'input-error-msg': (zipcode.invalid && zipcode.value)||(zipcode.valid && zipcode.value
+                <input type="text" class="input-basic" id="zipcode" required [(ngModel)]="contactForm.zipcode" name="zipcode" pattern="[0-9]{5}" onKeyPress="if(this.value.length==5) return false;" #zipcode="ngModel" [ngClass]="{'input-error-msg': (zipcode.invalid && zipcode.value)||(zipcode.valid && zipcode.value
                 && isNotNumber(zipcode.value))}">
-                <span class="input-error" *ngIf="zipcode.valid && zipcode.value && isNotNumber(zipcode.value)">
-                    Solo se permiten números
+                <span class="input-error" *ngIf="(zipcode.valid && zipcode.value && isNotNumber(zipcode.value)) || (zipcode.invalid && zipcode.value)">
+                    Solo se permiten números. 5 dígitos.
                 </span>
             </div>
         </form>
